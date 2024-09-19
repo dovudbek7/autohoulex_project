@@ -193,6 +193,16 @@ $(document).ready(function () {
             $input.removeClass('invalid').addClass('valid');
         }
     }
+    // Clear model input when make changes
+    $('#make').on('input', function () {
+        $('#model').val('').data('id', '').removeClass('valid invalid'); // Clear model input and remove validation classes
+        $('#model-suggestions').hide(); // Hide model suggestions
+    });
+
+    $(document).on('click', '#make-suggestions .autocomplete-suggestion', function () {
+        $('#model').val('').data('id', '').removeClass('valid invalid'); // Clear model input when a make suggestion is clicked
+        $('#model-suggestions').hide(); // Hide model suggestions
+    });
 
     setupAutocomplete('#make', '#make-suggestions', '{% url "auto:fetch_make" %}');
 

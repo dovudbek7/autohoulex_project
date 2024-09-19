@@ -24,19 +24,12 @@
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 
     {% block extra_css %}{% endblock %}
+
 </head>
 
 <body>
 
 
-<!--    Preloader-->
-<div id="preloader">
-    <div class="sk-three-bounce">
-        <div class="sk-child sk-bounce1"></div>
-        <div class="sk-child sk-bounce2"></div>
-        <div class="sk-child sk-bounce3"></div>
-    </div>
-</div>
 
 <!-- Navigation -->
 <div id="header">
@@ -84,7 +77,6 @@
 
 
 <div class="headline">
-
     {% block content %}
     {% endblock %}
 </div>
@@ -101,19 +93,29 @@
     </div>
 </div>
 
+{% if not show_loader %}
 
+<!--    Preloader-->
+<div id="preloader">
+    <div class="sk-three-bounce">
+        <div class="sk-child sk-bounce1"></div>
+        <div class="sk-child sk-bounce2"></div>
+        <div class="sk-child sk-bounce3"></div>
+    </div>
+</div>
+{% endif %}
 
 <!-- Site footer -->
 <footer class="site-footer">
     <div class="container fade-up">
         <div class="row">
-            <div class="col-sm-12 col-md-6">
-                <h6>Auto Haul Express LLC</h6>
-                <p class="text-justify">Disclaimer: All pictures of equipment are meant for general reference and do not
-                    imply automatic use of that equipment. US Car-Go Freight operates as a brokerage working with a
-                    vetted group of contracted drivers. If you would like to view pictures of the equipment being used
-                    for your specific transport, please be sure to request those from your US Car-Go Freight
-                    representative.</p>
+                <div class="col-sm-12 col-md-5 footer_first_seaction">
+                <img src="{% static 'img/logo.PNG' %}" alt="" width="150">
+
+                <p>Your Vehicle’s Journey is guaranteed with Us</p>
+                <img src="{% static 'img/footer_transport.jpg' %}" alt="" width="120" style="margin-top: 20px">
+                <p style="margin-top: 20px">MC: 1618777 <br> DOT: 4197700</p>
+
             </div>
 
             <div class="col-xs-6 col-md-4">
@@ -153,9 +155,10 @@
         <hr>
     </div>
     <div class="container ">
+        <p>© 2024 Road Leenk. All rights reserved.</p>
         <div class="row">
 
-            <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="col-md-4 col-sm-6 col-xs-12" style="margin-left: auto; margin-right: auto">
                 <ul class="social-icons">
                     <li><a class="facebook" href="https://www.facebook.com/share/rwcbnZfvptgAX4tY/?mibextid=LQQJ4d"><i class='bx bxl-facebook'></i></a></li>
                     <li><a class="instagram" href="https://www.instagram.com/autohaulex?igsh=ejFpOG1hZDl4amhx&utm_source=qr"><i class='bx bxl-instagram'></i></a></li>
@@ -166,6 +169,7 @@
         </div>
     </div>
 </footer>
+
 {% if not show_quote_button %}
 <a href="{% url 'auto:quote' %}" class="get_quote_button" id="getQuoteButton">FREE Quote!</a>
 {% endif %}
@@ -341,7 +345,7 @@
             easing: 'ease-in-out',
             origin: 'bottom',
             opacity: 0,
-            reset: true
+            reset: false
         });
     });
 
@@ -467,10 +471,10 @@
             setTimeout(() => notification.remove(), 500);
         }
 
-        setTimeout(generateNotification, 20000);
+        setTimeout(generateNotification, 25000);
 
         function randomNotificationIntervals() {
-            const randomInterval = Math.floor(Math.random() * 40000) + 1000;
+            const randomInterval = Math.floor(Math.random() * 45000) + 25000;
             setTimeout(() => {
                 generateNotification();
                 randomNotificationIntervals();

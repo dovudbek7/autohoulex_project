@@ -12,7 +12,7 @@ from django.http import JsonResponse
 def home(request):
     form = OrdersForm()
     latest_posts = Post.published.order_by('-publish')[:3]
-    return render(request, 'index.html', {'form': form, 'latest_posts': latest_posts})
+    return render(request, 'index.html', {'form': form, 'latest_posts': latest_posts, 'show_loader': True})
 
 
 @handle_post_request
