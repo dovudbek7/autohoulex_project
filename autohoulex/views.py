@@ -6,6 +6,8 @@ from .utils import handle_post_request, send_telegram_message, create_order_mess
     send_contact_telegram_message
 
 from django.http import JsonResponse
+from django.contrib.syndication.views import Feed
+from django.urls import reverse
 
 
 @handle_post_request
@@ -129,3 +131,5 @@ def policy(request):
 
 def trigger_404(request, exception):
     return render(request, '404.html', {'show_quote_button': True}, status=404)
+
+

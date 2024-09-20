@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block extra_meta %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
     <link rel="icon" href="{% static 'img/logo.PNG' %}" type="image/x-icon">
     <link rel="stylesheet"
@@ -476,6 +477,23 @@
 
         randomNotificationIntervals();
     });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "AutoHaulex",
+  "url": "https://autohaulex.com",
+  "description": "We provide auto transportation services.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "6023 Ruby Way, Nine Mile Falls, WA 99026",
+    "addressLocality": "United States",
+    "postalCode": "6023",
+    "addressCountry": "US"
+  }
+}
 </script>
 
 {% block extra_js %}
