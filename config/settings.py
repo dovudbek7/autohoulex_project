@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%i^_07e+_1#tu3po*b8m_&cw4ind96cla3jwa!pcct6-nx%#%l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     '*'
@@ -132,4 +132,4 @@ MEDIA_URL = "/media/"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CSRF_TRUSTED_ORIGINS = ["https://be86-84-54-83-231.ngrok-free.app"]
+CSRF_TRUSTED_ORIGINS = ["https://autohaulex.com/"]
