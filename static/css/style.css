@@ -1912,7 +1912,7 @@ ul {
   justify-content: space-between;
   align-items: center;
   transition: transform 0.3s ease;
-  height: 150px;
+  height: 15px;
   margin: 10px;
 }
 
@@ -1944,7 +1944,6 @@ ul {
 .info-section {
   text-align: right;
   flex: 0 0 80%;
-  /* Adjust width of the right section */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1971,6 +1970,7 @@ ul {
   height: auto;
   vertical-align: middle;
   margin-left: 10px;
+  margin-top: 5px;
 }
 
 /* Slick Slider Custom Styles */
@@ -1978,6 +1978,7 @@ ul {
   padding: 15px;
   display: flex;
   justify-content: center;
+  width: 1000px;
 }
 
 .slick-list {
@@ -2006,7 +2007,7 @@ ul {
 
   .info-section {
     text-align: left;
-    margin-top: -80px;
+    margin-top: -70px;
   }
 
   .rating-section h3 {
@@ -2032,7 +2033,7 @@ ul {
   }
 
   .info-section img {
-    width: 30%;
+    width: 50%;
   }
 
   .reviews-section h2 {
